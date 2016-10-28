@@ -1,0 +1,61 @@
+{
+    "invalid_token": "da2da838-6311-4646-805f-2466954b1a11",
+    "consulting": {
+       "channel":"ecommerce",
+       "cardholder_name":"test_nodejs_cardholder_name",
+       "product_name":"test_nodejs_product_name",
+       "consumer_name":"test_nodejs_consumer_name",
+       "transaction_time":"1476813671",
+       "payment_method":"card",
+       "transaction_amount":"500.00",
+       "card_number":"4111111111111111",
+       "currency_code":"MXN",
+       "coupon":false,
+       "telephone":"9999999999",
+       "expedited_shipping":false,
+       "email":"test_nodejs@bayonet.io",
+       "payment_gateway":"stripe",
+       "device_fingerprint":"AB776G556G777H",
+       "shipping_address":{
+          "address_line_1":"test_nodejs_line_1",
+          "address_line_2":"test_nodejs_line_2",
+          "city":"Mexico DF",
+          "state":"Mexico DF",
+          "country":"MEX",
+          "zip_code":"111111"
+       }
+    },
+    "feedback": {
+        "transaction_status":"bank_decline",
+        "transaction_id":"test_nodejs",
+        "feedback_api_trans_code":"xxx"
+    },
+    "feedback_historical": {
+       "channel":"ecommerce",
+       "type":"transaction",
+       "cardholder_name":"test_nodejs_cardholder_name",
+       "product_name":"test_nodejs_product_name",
+       "consumer_name":"test_nodejs_consumer_name",
+       "transaction_time":"1476813671",
+       "transaction_id":"test_nodejs",
+       "transaction_status":"success",
+       "payment_method":"card",
+       "transaction_amount":"500.00",
+       "card_number":"4111111111111111",
+       "currency_code":"MXN",
+       "coupon":false,
+       "telephone":"9999999999",
+       "expedited_shipping":false,
+       "email":"test_nodejs@bayonet.io",
+       "payment_gateway":"stripe",
+       "device_fingerprint":"AB776G556G777H",
+       "shipping_address":{
+          "address_line_1":"test_nodejs_line_1",
+          "address_line_2":"test_nodejs_line_2",
+          "city":"Mexico DF",
+          "state":"Mexico DF",
+          "country":"MEX",
+          "zip_code":"111111"
+       }
+    }
+}

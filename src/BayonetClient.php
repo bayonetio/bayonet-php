@@ -22,26 +22,26 @@ class BayonetClient {
         $this->client = new Client();
     }
 
-    public function consulting() {
-        $this->request('consulting');
+    public function consulting($body = []) {
+        $this->request('consulting', $body);
     }
 
-    public function feedback() {
-        $this->request('feedback');
+    public function feedback($body = []) {
+        $this->request('feedback', $body);
     }
 
-    public function feedback_historical() {
-        $this->request('feedback-historical');
+    public function feedback_historical($body = []) {
+        $this->request('feedback-historical', $body);
     }
 
-    private function request($api) {
+    private function request($api, $body = []) {
+        $body['api_key'] = $this->config['api_key'];
+
         $response = $this->client->post($this->config['base_uri'] . $api,  [
             'headers' => [
                 'Content-Type' => 'application/json'
             ],
-            'json' => [
-                'api_key' => $this->config['api_key']
-            ]
+            'json' => $body
         ]);
 
         print_r($response);
