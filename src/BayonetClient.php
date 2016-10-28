@@ -23,15 +23,15 @@ class BayonetClient {
     }
 
     public function consulting($body = []) {
-        $this->request('consulting', $body);
+        return $this->request('consulting', $body);
     }
 
     public function feedback($body = []) {
-        $this->request('feedback', $body);
+        return $this->request('feedback', $body);
     }
 
     public function feedback_historical($body = []) {
-        $this->request('feedback-historical', $body);
+        return $this->request('feedback-historical', $body);
     }
 
     private function request($api, $body = []) {
@@ -44,7 +44,7 @@ class BayonetClient {
             'json' => $body
         ]);
 
-        print_r($response);
+        return json_decode($response->getBody());
     }
 }
 ?>
