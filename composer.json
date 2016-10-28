@@ -9,5 +9,10 @@
             "name": "Luis Herrada",
             "email": "luis@vordem.mx"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bayonet\\": "src/"
+        }
+    }
 }
