@@ -156,7 +156,7 @@ For a full list of error codes and their messages, please see the "Integration S
 ## Demo
 You can run a demo application with this command:
 ```sh
-echo Hello
+cd demo && php -S localhost:8000
 ```
 
 ## Testing
