@@ -3,6 +3,7 @@
 namespace Bayonet;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 class BayonetClient {
     private $client;
@@ -22,29 +23,48 @@ class BayonetClient {
         $this->client = new Client();
     }
 
-    public function consulting($body = []) {
-        return $this->request('consulting', $body);
+    public function consulting(array $config = []) {
+        $this->request('consulting', $config);
     }
 
-    public function feedback($body = []) {
-        return $this->request('feedback', $body);
+    public function feedback(array $config = []) {
+        $this->request('feedback', $config);
     }
 
-    public function feedback_historical($body = []) {
-        return $this->request('feedback-historical', $body);
+    public function feedback_historical(array $config = []) {
+        $this->request('feedback-historical', $config);
     }
 
-    private function request($api, $body = []) {
-        $body['api_key'] = $this->config['api_key'];
+    private function request($api, array $config = []) {
+        if(!isset($config['body']))
+            $config['body'] = [];
 
-        $response = $this->client->post($this->config['base_uri'] . $api,  [
-            'headers' => [
-                'Content-Type' => 'application/json'
-            ],
-            'json' => $body
-        ]);
+        $config['body']['api_key'] = $this->config['api_key'];
 
-        return json_decode($response->getBody());
+        try {
+            $response = $this->client->post($this->config['base_uri'] . $api,  [
+                'headers' => [
+                    'Content-Type' => 'application/json'
+                ],
+                'json' => $config['body']
+            ]);
+
+            if(isset($config['on_success'])) {
+                $config['on_success'](
+                    json_decode(
+                        $response->getBody()
+                    )
+                );
+            }
+        } catch(\Exception $e) {
+            if(isset($config['on_failure'])) {
+                $config['on_failure'](
+                    json_decode(
+                        $e->getResponse()->getBody()->getContents()
+                    )
+                );
+            }
+        }
     }
 }
 ?>
