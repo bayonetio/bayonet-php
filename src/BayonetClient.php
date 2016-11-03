@@ -63,6 +63,9 @@ class BayonetClient {
                         $e->getResponse()->getBody()->getContents()
                     )
                 );
+            } else {
+                // let the client know the request wasnt successful
+                throw $e;
             }
         }
     }
