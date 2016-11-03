@@ -23,4 +23,24 @@ $bayonet->consulting([
     }
 ]);
 
+$bayonet->feedback([
+    'body' => $fx['feedback'],
+    'on_success' => function($response) {
+        print_r($response);
+    },
+    'on_failure' => function($response) {
+        print_r($response);
+    }
+]);
+
+$bayonet->feedback_historical([
+    'body' => $fx['feedback_historical'],
+    'on_success' => function($response) {
+        print_r($response);
+    },
+    'on_failure' => function($response) {
+        print_r($response);
+    }
+]);
+
 ?>
