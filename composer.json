@@ -1,5 +1,5 @@
 {
-    "name": "bayonet/bayonet-php-sdk",
+    "name": "bayonet/bayonet-php",
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.2"
