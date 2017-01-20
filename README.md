@@ -1,3 +1,6 @@
+[![Latest Stable Version](https://poser.pugx.org/bayonet/bayonet-php/v/stable)](https://packagist.org/packages/bayonet/bayonet-php)
+[![License](https://poser.pugx.org/bayonet/bayonet-php/license)](https://packagist.org/packages/bayonet/bayonet-php)
+
 ## Bayonet
 Bayonet enables companies to feed and consult a global database about online consumers’ reputation, based on historic payments. Start making smarter business decisions today.
 
@@ -11,45 +14,79 @@ Bayonet provides an Ecosystem of Trust and Protection where companies can colabo
 To know more about Bayonet's API and its domain and technical details, please see the "Integration Specs V 1.0" document provided by the Bayonet team.
 
 ## Getting started
+### Requirements
 To use this SDK, please make sure:
   * You have PHP 5.4 or superior installed on your system.
   * You have an API KEY (sandbox and/or live) provided by Bayonet's team.
-  * Add dependency 'bayonet-php-sdk' in your composer.json file.
-  * Run composer to get the dependencies
+  
+### Composer
+1. Add dependency 'bayonet-php' in your composer.json file
+  
+    ```
+    "require": {
+        ...
+        "bayonet/bayonet-php": "1.0.*"
+        ...
+    }
+    ```
+   Run composer to get the dependencies
   
     ```sh
     composer update
     ```
-  * Import the Bayonet SDK.
+2. Import the Bayonet SDK
 
     ```php
-    <?php
     require __DIR__ . '/../vendor/autoload.php';
     use Bayonet\BayonetClient;
-    ?>
     ```
-  * Create config options, with parameters (api_key).
+3. Create config options, with parameters (api_key)
 
     ```php
-    <?php
     $bayonet = new BayonetClient([
-        'api_key' => '011RR5BdHEEF2RNSmha42SDQ6sYRL9TM',
+        'api_key' => 'your_api_key',
         'version' => 1
-    ]);;
-    ?>
+    ]);
     ```
-  * You can use environment vars too.
+    You can use environment vars too.
 
     ```sh
-    export BAYONET_API_KEY=011RR5BdHEEF2RNSmha42SDQ6sYRL9TM
+    export BAYONET_API_KEY=your_api_key
     ```
+    
+### Manual Installation
+1. If you do not use Composer, download the [latest release](https://github.com/Bayonet-Client/bayonet-php/releases). Extract into your project root into a folder named "bayonet-php". Include BayonetClient in your project
+
+    ```php
+    require 'bayonet-php/src/BayonetClient.php';
+    use Bayonet\BayonetClient;
+    ```
+2. BayonetClient uses [Guzzle](https://github.com/guzzle/guzzle) as dependency. Make sure you download and include Guzzle into your project
+
+    ```php
+    require 'guzzle/autoloader.php';
+    ```
+   If you use Composer, the above dependency will be handled automatically. If you choose manual installation, you will need to make sure that the dependecy is available.
+
+3. Once you have BayonetClient set up, create config options, with parameters (api_key)
+
+    ```php
+    $bayonet = new BayonetClient([
+    'api_key' => 'your_api_key',
+    'version' => 1
+    ]);
+    ```
+   You can use environment vars too
+
+    ```sh
+    export BAYONET_API_KEY=your_api_key
+    ``` 
 
 ## Usage
 Once you have Bayonet's SDK configured, you can call the three APIs with the following syntax:
   * Consulting API
   
     ```php
-    <?php
     $bayonet->consulting([
         'body' => [
             'channel' => 'mpos',
@@ -79,25 +116,27 @@ Once you have Bayonet's SDK configured, you can call the three APIs with the fol
             print_r($response);
         }
     ]);
-    ?>
     ```
   * Feedback API
   
     ```php
-    <?php
     $bayonet->feedback([
         'body' => [
             'transaction_status' => 'bank_decline',
             'transaction_id' => 'test_php',
             'feedback_api_trans_code' => 'xxx'
-        ]
+        ],
+        'on_success' => function($response) {
+            print_r($response);
+        },
+        'on_failure' => function($response) {
+            print_r($response);
+        }
     ]);
-    ?>
     ```
   * Feedback-historical API
   
     ```php
-    <?php
     $bayonet->feedback_historical([
         'body' => [
             'channel' => 'mpos',
@@ -126,9 +165,14 @@ Once you have Bayonet's SDK configured, you can call the three APIs with the fol
                 'country' => 'USA',
                 'zip_code' => '03257'
             ]
-        ]
+        ],
+        'on_success' => function($response) {
+            print_r($response);
+        },
+        'on_failure' => function($response) {
+            print_r($response);
+        }
     ]);
-    ?>
     ```
  
 ## Success and error handling
