@@ -16,7 +16,6 @@
     "support": {
         "email": "support@bayonet.io"
     },
-    "type": "library",
     "require": {
         "php": ">=5.4.0",
         "guzzlehttp/guzzle": "^6.2"
