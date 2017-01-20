@@ -1,15 +1,26 @@
 {
     "name": "bayonet/bayonet-php",
-    "type": "library",
-    "require": {
-        "guzzlehttp/guzzle": "^6.2"
-    },
+    "description": "Bayonet PHP library",
+    "keywords": ["bayonet", "php", "anti-fraud"],
+    "homepage": "https://bayonet.io",
+    "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
-            "name": "Luis Herrada",
-            "email": "luis@vordem.mx"
+            "name": "Luis Herrada"
+        },
+        {
+            "name": "Imran Arshad"
         }
     ],
+    "support": {
+        "email": "support@bayonet.io"
+    },
+    "type": "library",
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
     "autoload": {
         "psr-4": {
             "Bayonet\\": "src/"
