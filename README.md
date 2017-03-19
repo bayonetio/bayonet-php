@@ -206,5 +206,5 @@ cd demo && php -S localhost:8000
 ## Testing
 You can run the test suite with the following command:
 ```sh
-echo Hello
+./vendor/bin/phpunit --bootstrap src/BayonetClient.php --testdox tests
 ```
