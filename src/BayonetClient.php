@@ -23,6 +23,10 @@ class BayonetClient {
         $this->client = new Client();
     }
 
+    public function getConfig() {
+        return $this->config;
+    }
+
     public function consulting(array $config = []) {
         $this->request('consulting', $config);
     }
