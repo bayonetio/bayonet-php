@@ -4,7 +4,6 @@
     "keywords": ["bayonet", "php", "anti-fraud"],
     "homepage": "https://bayonet.io",
     "license": "MIT",
-    "version": "1.2.0",
     "authors": [
         {
             "name": "Luis Herrada"
