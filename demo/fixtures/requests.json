@@ -57,5 +57,8 @@
           "country":"MEX",
           "zip_code":"111111"
        }
+    },
+    "get_fingerprint_data": {
+       "bayonet_fingerprint_token" : "fingerprint-token-generated-by-JS-snipppet"
     }
 }

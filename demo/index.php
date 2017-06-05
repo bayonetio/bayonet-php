@@ -53,6 +53,7 @@ if($method == 'POST') {
                 <option value="consulting">Consulting</option>
                 <option value="feedback">Feedback</option>
                 <option value="feedback_historical">Feedback historical</option>
+                <option value="get_fingerprint_data">Get fingerprint data</option>
             </select>
             <input id="key" class="form-control" type="text" placeholder="API Key" />
             <button id="go" class="btn btn-default" type="submit">Go</button>
@@ -77,7 +78,8 @@ if($method == 'POST') {
         var examples = {
             consulting: '<?= json_encode($fx["consulting"]); ?>',
             feedback: '<?= json_encode($fx["feedback"]); ?>',
-            feedback_historical: '<?= json_encode($fx["feedback_historical"]); ?>'
+            feedback_historical: '<?= json_encode($fx["feedback_historical"]); ?>',
+            get_fingerprint_data: '<?= json_encode($fx["get_fingerprint_data"]); ?>'
         };
 
         $(function() {
