@@ -25,7 +25,7 @@ To use this SDK, please make sure:
     ```
     "require": {
         ...
-        "bayonet/bayonet-php": "1.0.*"
+        "bayonet/bayonet-php": "1.1.*"
         ...
     }
     ```
@@ -165,6 +165,21 @@ Once you have Bayonet's SDK configured, you can call the three APIs with the fol
                 'country' => 'USA',
                 'zip_code' => '03257'
             ]
+        ],
+        'on_success' => function($response) {
+            print_r($response);
+        },
+        'on_failure' => function($response) {
+            print_r($response);
+        }
+    ]);
+    ```
+  * Get-fingerprint-data API
+  
+    ```php
+    $bayonet->get_fingerprint_data([
+        'body' => [
+            'bayonet_fingerprint_token' => 'fingerprint-token-generated-by-JS-snipppet'
         ],
         'on_success' => function($response) {
             print_r($response);
