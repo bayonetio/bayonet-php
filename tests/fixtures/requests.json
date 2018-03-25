@@ -1,29 +1,46 @@
 {
-    "invalid_token": "da2da838-6311-4646-805f-2466954b1a11",
-    "consulting": {
-       "channel":"ecommerce",
-       "cardholder_name":"test_nodejs_cardholder_name",
-       "product_name":"test_nodejs_product_name",
-       "consumer_name":"test_nodejs_consumer_name",
-       "transaction_time":"1476813671",
-       "payment_method":"card",
-       "transaction_amount":"500.00",
-       "card_number":"4111111111111111",
-       "currency_code":"MXN",
-       "coupon":false,
-       "telephone":"9999999999",
-       "expedited_shipping":false,
-       "email":"test_nodejs@bayonet.io",
-       "payment_gateway":"stripe",
-       "device_fingerprint":"AB776G556G777H",
-       "shipping_address":{
-          "address_line_1":"test_nodejs_line_1",
-          "address_line_2":"test_nodejs_line_2",
-          "city":"Mexico DF",
-          "state":"Mexico DF",
-          "country":"MEX",
-          "zip_code":"111111"
-       }
+    "invalid_token": "xxx",
+    "consult": {
+      "email": "test_ruby@bayonet.io",
+      "consumer_name": "test ruby consumer name",
+      "consumer_internal_id": "test_ruby_1",
+      "cardholder_name": "test ruby cardholder name",
+      "telephone": "9999999999",
+      "card_number": "4111111111111111",
+      "transaction_amount": 500.00,
+      "currency_code": "MXN",
+      "shipping_address": {
+        "line_1": "test_ruby_line_1",
+        "line_2": "test_ruby_line_2",
+        "city": "Mexico DF",
+        "state": "Mexico DF",
+        "country": "MEX",
+        "zip_code": "111111"
+      },
+      "billing_address": {
+        "line_1": "test_ruby_line_1",
+        "line_2": "test_ruby_line_2",
+        "city": "Mexico DF",
+        "state": "Mexico DF",
+        "country": "MEX",
+        "zip_code": "111111"
+      },
+      "payment_method": "card",
+      "transaction_time": 1476813671,
+      "order_id": "test_ruby_123",
+      "transaction_id": "test_ruby_123",
+      "payment_gateway": "stripe",
+      "channel": "ecommerce",
+      "coupon": "test_ruby_coupon",
+      "expedited_shipping": false,
+      "products": [
+        {
+          "product_id": "1",
+          "product_name": "product_1",
+          "product_price": 500.00,
+          "product_category": "test"
+        }
+      ]
     },
     "feedback": {
         "transaction_status":"bank_decline",
