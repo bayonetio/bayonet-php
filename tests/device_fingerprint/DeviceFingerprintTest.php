@@ -22,7 +22,7 @@ final class DeviceFingerprintTest extends PHPUnit_Framework_TestCase {
   }
 
   private function getFixures() {
-    $str = file_get_contents(__DIR__ . '/../fixtures/requests.json');
+    $str = file_get_contents(__DIR__ . '/../fixtures/device_fingerprint.json.json');
     return json_decode($str, true);
   }
 

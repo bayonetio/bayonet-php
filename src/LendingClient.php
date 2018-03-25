@@ -2,7 +2,7 @@
 
 namespace Bayonet;
 
-class Lending extends BayonetClient {
+class LendingClient extends BayonetClient {
 
   public function __construct(array $config = []) {
     parent::__construct($config);

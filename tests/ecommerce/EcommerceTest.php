@@ -22,7 +22,7 @@ class EcommerceTest extends PHPUnit_Framework_TestCase {
   }
 
   private function getFixures() {
-    $str = file_get_contents(__DIR__ . '/../fixtures/requests.json');
+    $str = file_get_contents(__DIR__ . '/../fixtures/ecommerce.json');
     return json_decode($str, true);
   }
 

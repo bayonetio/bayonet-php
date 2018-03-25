@@ -86,8 +86,5 @@
         }
       ],
       "transaction_status":"success"
-    },
-    "get_fingerprint_data": {
-      "bayonet_fingerprint_token" : "12345678592e264324ab8f1232a5625a12345678"
     }
 }
