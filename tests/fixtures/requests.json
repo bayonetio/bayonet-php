@@ -1,25 +1,25 @@
 {
-    "invalid_token": "xxx",
+    "invalid_api_key": "xxx",
     "consult": {
-      "email": "test_ruby@bayonet.io",
-      "consumer_name": "test ruby consumer name",
-      "consumer_internal_id": "test_ruby_1",
-      "cardholder_name": "test ruby cardholder name",
+      "email": "test_php@bayonet.io",
+      "consumer_name": "test php consumer name",
+      "consumer_internal_id": "test_php_1",
+      "cardholder_name": "test php cardholder name",
       "telephone": "9999999999",
       "card_number": "4111111111111111",
       "transaction_amount": 500.00,
       "currency_code": "MXN",
       "shipping_address": {
-        "line_1": "test_ruby_line_1",
-        "line_2": "test_ruby_line_2",
+        "line_1": "test_php_line_1",
+        "line_2": "test_php_line_2",
         "city": "Mexico DF",
         "state": "Mexico DF",
         "country": "MEX",
         "zip_code": "111111"
       },
       "billing_address": {
-        "line_1": "test_ruby_line_1",
-        "line_2": "test_ruby_line_2",
+        "line_1": "test_php_line_1",
+        "line_2": "test_php_line_2",
         "city": "Mexico DF",
         "state": "Mexico DF",
         "country": "MEX",
@@ -27,11 +27,10 @@
       },
       "payment_method": "card",
       "transaction_time": 1476813671,
-      "order_id": "test_ruby_123",
-      "transaction_id": "test_ruby_123",
+      "order_id": "test_php_123",
       "payment_gateway": "stripe",
       "channel": "ecommerce",
-      "coupon": "test_ruby_coupon",
+      "coupon": "test_php_coupon",
       "expedited_shipping": false,
       "products": [
         {
@@ -42,38 +41,51 @@
         }
       ]
     },
-    "feedback": {
-        "transaction_status":"bank_decline",
-        "transaction_id":"test_nodejs",
-        "feedback_api_trans_code":"xxx"
+    "update_transaction": {
+        "transaction_status":"success",
+        "order_id":"test_php_123"
     },
     "feedback_historical": {
-       "channel":"ecommerce",
-       "type":"transaction",
-       "cardholder_name":"test_nodejs_cardholder_name",
-       "product_name":"test_nodejs_product_name",
-       "consumer_name":"test_nodejs_consumer_name",
-       "transaction_time":"1476813671",
-       "transaction_id":"test_nodejs",
-       "transaction_status":"success",
-       "payment_method":"card",
-       "transaction_amount":"500.00",
-       "card_number":"4111111111111111",
-       "currency_code":"MXN",
-       "coupon":false,
-       "telephone":"9999999999",
-       "expedited_shipping":false,
-       "email":"test_nodejs@bayonet.io",
-       "payment_gateway":"stripe",
-       "device_fingerprint":"AB776G556G777H",
-       "shipping_address":{
-          "address_line_1":"test_nodejs_line_1",
-          "address_line_2":"test_nodejs_line_2",
-          "city":"Mexico DF",
-          "state":"Mexico DF",
-          "country":"MEX",
-          "zip_code":"111111"
-       }
+      "email": "test_php@bayonet.io",
+      "consumer_name": "test php consumer name",
+      "consumer_internal_id": "test_php_1",
+      "cardholder_name": "test php cardholder name",
+      "telephone": "9999999999",
+      "card_number": "4111111111111111",
+      "transaction_amount": 500.00,
+      "currency_code": "MXN",
+      "shipping_address": {
+        "line_1": "test_php_line_1",
+        "line_2": "test_php_line_2",
+        "city": "Mexico DF",
+        "state": "Mexico DF",
+        "country": "MEX",
+        "zip_code": "111111"
+      },
+      "billing_address": {
+        "line_1": "test_php_line_1",
+        "line_2": "test_php_line_2",
+        "city": "Mexico DF",
+        "state": "Mexico DF",
+        "country": "MEX",
+        "zip_code": "111111"
+      },
+      "payment_method": "card",
+      "transaction_time": 1476813671,
+      "transaction_id": "test_php_123",
+      "payment_gateway": "stripe",
+      "channel": "ecommerce",
+      "coupon": "test_php_coupon",
+      "expedited_shipping": false,
+      "products": [
+        {
+          "product_id": "1",
+          "product_name": "product_1",
+          "product_price": 500.00,
+          "product_category": "test"
+        }
+      ],
+      "transaction_status":"success"
     },
     "get_fingerprint_data": {
       "bayonet_fingerprint_token" : "fingerprint-token-generated-by-JS-snipppet"

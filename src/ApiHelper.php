@@ -12,7 +12,7 @@ class ApiHelper {
     if(!isset($params['body']))
       $params['body'] = [];
 
-    $params['body']['api_key'] = $config['api_key'];
+    $params['body']['auth']['api_key'] = $config['api_key'];
 
     $base_uri = $config['base_uri'];
     if($api == "fingerprinting")
