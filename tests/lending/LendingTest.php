@@ -14,6 +14,8 @@ class LendingTest extends PHPUnit_Framework_TestCase {
     $this->bayonet_client_invalid = $this->initializeClient($this->fixtures['invalid_api_key']);
     $this->bayonet_client = $this->initializeClient(getenv('BAYONET_API_KEY'));
     $this->transaction_id = (string) rand();
+    // create a transaction with this transaction id
+    $this->seedTransaction();
   }
 
   private function initializeClient($api_key) {
@@ -28,70 +30,84 @@ class LendingTest extends PHPUnit_Framework_TestCase {
     return json_decode($str, true);
   }
 
-//  public function testReportTransactionShouldValidateApiKey() {
-//    $this->bayonet_client_invalid->report_transaction([
-//      'body' => [],
-//      'on_success' => function($response) {
-//        $this->assertEquals(true, false);
-//      },
-//      'on_failure' => function($response) {
-//        $this->assertEquals($response->reason_code, 12);
-//      }
-//    ]);
-//  }
-//
-//  public function testReportTransactionAndConsultShouldValidateApiKey() {
-//    $this->bayonet_client_invalid->report_transaction_and_consult([
-//      'body' => [],
-//      'on_success' => function($response) {
-//        $this->assertEquals(true, false);
-//      },
-//      'on_failure' => function($response) {
-//        $this->assertEquals($response->reason_code, 12);
-//      }
-//    ]);
-//  }
-//
-//  public function testConsultShouldValidateApiKey() {
-//    $this->bayonet_client_invalid->consult([
-//      'body' => [],
-//      'on_success' => function($response) {
-//        $this->assertEquals(true, false);
-//      },
-//      'on_failure' => function($response) {
-//        $this->assertEquals($response->reason_code, 12);
-//      }
-//    ]);
-//  }
-//
-//  public function testFeedbackShouldValidateApiKey() {
-//    $this->bayonet_client_invalid->feedback([
-//      'body' => [],
-//      'on_success' => function($response) {
-//        $this->assertEquals(true, false);
-//      },
-//      'on_failure' => function($response) {
-//        $this->assertEquals($response->reason_code, 12);
-//      }
-//    ]);
-//  }
-//
-//  public function testFeedbackHistoricalShouldValidateApiKey() {
-//    $this->bayonet_client_invalid->feedback_historical([
-//      'body' => [],
-//      'on_success' => function($response) {
-//        $this->assertEquals(true, false);
-//      },
-//      'on_failure' => function($response) {
-//        $this->assertEquals($response->reason_code, 12);
-//      }
-//    ]);
-//  }
+  private function seedTransaction() {
+    $json = $this->fixtures['report_transaction'];
+    $json['transaction_id'] = $this->transaction_id;
+    $this->bayonet_client->report_transaction([
+      'body' => $json,
+      'on_success' => function($response) {
+        $this->assertEquals($response->reason_code, 0);
+      },
+      'on_failure' => function($response) {
+        fwrite(STDERR, print_r($response, TRUE));
+        $this->assertEquals(true, false);
+      }
+    ]);
+  }
+
+  public function testReportTransactionShouldValidateApiKey() {
+    $this->bayonet_client_invalid->report_transaction([
+      'body' => [],
+      'on_success' => function($response) {
+        $this->assertEquals(true, false);
+      },
+      'on_failure' => function($response) {
+        $this->assertEquals($response->reason_code, 12);
+      }
+    ]);
+  }
+
+  public function testReportTransactionAndConsultShouldValidateApiKey() {
+    $this->bayonet_client_invalid->report_transaction_and_consult([
+      'body' => [],
+      'on_success' => function($response) {
+        $this->assertEquals(true, false);
+      },
+      'on_failure' => function($response) {
+        $this->assertEquals($response->reason_code, 12);
+      }
+    ]);
+  }
+
+  public function testConsultShouldValidateApiKey() {
+    $this->bayonet_client_invalid->consult([
+      'body' => [],
+      'on_success' => function($response) {
+        $this->assertEquals(true, false);
+      },
+      'on_failure' => function($response) {
+        $this->assertEquals($response->reason_code, 12);
+      }
+    ]);
+  }
+
+  public function testFeedbackShouldValidateApiKey() {
+    $this->bayonet_client_invalid->feedback([
+      'body' => [],
+      'on_success' => function($response) {
+        $this->assertEquals(true, false);
+      },
+      'on_failure' => function($response) {
+        $this->assertEquals($response->reason_code, 12);
+      }
+    ]);
+  }
+
+  public function testFeedbackHistoricalShouldValidateApiKey() {
+    $this->bayonet_client_invalid->feedback_historical([
+      'body' => [],
+      'on_success' => function($response) {
+        $this->assertEquals(true, false);
+      },
+      'on_failure' => function($response) {
+        $this->assertEquals($response->reason_code, 12);
+      }
+    ]);
+  }
 
   public function testSuccessfulReportTransaction() {
     $json = $this->fixtures['report_transaction'];
-    $json['transaction_id'] = $this->transaction_id;
-    fwrite(STDERR, print_r($json['transaction_id'], TRUE));
+    $json['transaction_id'] = (string) rand();
     $this->bayonet_client->report_transaction([
       'body' => $json,
       'on_success' => function($response) {
@@ -107,7 +123,6 @@ class LendingTest extends PHPUnit_Framework_TestCase {
   public function testSuccessfulConsult() {
     $json = $this->fixtures['consult'];
     $json['transaction_id'] = $this->transaction_id;
-    fwrite(STDERR, print_r($json['transaction_id'], TRUE));
     $this->bayonet_client->consult([
       'body' => $json,
       'on_success' => function($response) {
@@ -142,7 +157,6 @@ class LendingTest extends PHPUnit_Framework_TestCase {
   public function testSuccessfulFeedback() {
     $json = $this->fixtures['feedback'];
     $json['transaction_id'] = $this->transaction_id;
-    fwrite(STDERR, print_r($json['transaction_id'], TRUE));
     $this->bayonet_client->feedback([
       'body' => $json,
       'on_success' => function($response) {
