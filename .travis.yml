@@ -9,4 +9,4 @@ php:
 install:
   - composer update
 script:
-  - ./vendor/bin/phpunit --bootstrap src/BayonetClient.php --testdox tests
+  - ./vendor/bin/phpunit tests

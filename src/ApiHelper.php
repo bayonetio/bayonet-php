@@ -12,11 +12,14 @@ class ApiHelper {
     if(!isset($params['body']))
       $params['body'] = [];
 
-    $params['body']['auth']['api_key'] = $config['api_key'];
-
     $base_uri = $config['base_uri'];
-    if($api == "fingerprinting")
+    if($api == "fingerprinting") {
       $base_uri = $config['base_uri_fingerprinting'];
+      $params['body']['api_key'] = $config['api_key'];
+    }
+    else {
+      $params['body']['auth']['api_key'] = $config['api_key'];
+    }
     if($api == "lending")
       $base_uri = $base_uri . 'lending/';
     if($api == "ecommerce")
