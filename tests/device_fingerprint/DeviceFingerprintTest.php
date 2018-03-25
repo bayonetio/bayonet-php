@@ -1,6 +1,6 @@
 <?php
 
-use Bayonet\DeviceFingerprint;
+use Bayonet\DeviceFingerprintClient;
 
 final class DeviceFingerprintTest extends PHPUnit_Framework_TestCase {
 
@@ -15,7 +15,7 @@ final class DeviceFingerprintTest extends PHPUnit_Framework_TestCase {
   }
 
   private function initializeClient($api_key) {
-    return new DeviceFingerprint([
+    return new DeviceFingerprintClient([
       'api_key' => $api_key,
       'version' => 2
     ]);

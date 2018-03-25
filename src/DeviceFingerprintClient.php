@@ -3,7 +3,7 @@
 namespace Bayonet;
 
 
-class DeviceFingerprint extends BayonetClient {
+class DeviceFingerprintClient extends BayonetClient {
 
   public function __construct(array $config = []) {
     parent::__construct($config);
