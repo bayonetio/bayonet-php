@@ -271,9 +271,9 @@ Once you have Bayonet's SDK configured, you can call the APIs with the following
     ```
 
   * Report Transaction (Request for loan received) + Consult 
-
-   This lets you report a transaction (solicitud) and consult Bayonet at the same time. The only difference from the above method (Report Transaction) is that this method will also return a consult response
-   
+    
+    This lets you report a transaction (solicitud) and consult Bayonet at the same time. The only difference from the above method (Report Transaction) is that this method will also return a consult response
+  
     ```php
     $bayonet->report_transaction_and_consult([
       'body' => [
