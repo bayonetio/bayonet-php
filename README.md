@@ -14,6 +14,7 @@ Bayonet provides an Ecosystem of Trust and Protection where companies can collab
 The examples shown in this README are only for demonstration of the functionality of this SDK. For the detailed integration flow, and when to send which API call, please refer to the Bayonet [API documentation](https://bayonet.io/console/docs).
 
 ## Getting started
+
 ### Requirements
 To use this SDK, please make sure:
   * You have PHP 5.4 or superior installed on your system.
@@ -34,27 +35,14 @@ To use this SDK, please make sure:
     ```sh
     composer update
     ```
-2. Load the dependencies
+2. Load the dependencies using Composer autoload
 
     ```php
-    require __DIR__ . '/../vendor/autoload.php';
-    ```
-3. Create config options, with parameters (api_key)
-
-    ```php
-    $bayonet = new BayonetClient([
-        'api_key' => 'your_api_key',
-        'version' => 1
-    ]);
-    ```
-    You can use environment vars too.
-
-    ```sh
-    export BAYONET_API_KEY=your_api_key
+    require_once('vendor/autoload.php');
     ```
     
 ### Manual Installation
-1. If you do not use Composer, download the [latest release](https://github.com/Bayonet-Client/bayonet-php/releases). Extract into your project root into a folder named "bayonet-php". Use the `init.php` file to load the Bayonet dependencies
+1. If you do not use Composer, download the [latest release](https://github.com/Bayonet-Client/bayonet-php/releases). Extract into your project root into a folder named `bayonet-php`. Use the `init.php` file to load the Bayonet dependencies
 
   ```php
   require 'bayonet-php/init.php';
@@ -65,20 +53,6 @@ To use this SDK, please make sure:
   require 'guzzle/autoloader.php';
   ```
   If you use Composer, the above dependency will be handled automatically. If you choose manual installation, you will need to make sure the dependency is available.
-
-3. Once you have BayonetClient set up, create config options, with parameters (api_key)
-
-  ```php
-  $bayonet = new BayonetClient([
-  'api_key' => 'your_api_key',
-  'version' => 1
-  ]);
-  ```
- You can use environment vars too
-
-  ```sh
-  export BAYONET_API_KEY=your_api_key
-  ``` 
 
 ## Usage
 Once you have Bayonet's SDK configured, you can call the APIs with the following syntax. Follow the guidelines specific to the product you are integrating:
@@ -444,7 +418,7 @@ Once you have Bayonet's SDK configured, you can call the APIs with the following
 Bayonet's SDK supports callbacks  for success and error handling
   ```php
   // make the request
-  $bayonet-><EVENT>([
+  $bayonet -> <EVENT>([
     'body' => ...,
     'on_success' => function($response) {
       print_r($response);
