@@ -436,12 +436,6 @@ Bayonet's SDK supports callbacks  for success and error handling
   ```
 For a full list of error codes and their messages, please refer to the Bayonet [API documentation](https://bayonet.io/console/docs).
 
-## Demo
-You can run a demo application with this command:
-```sh
-cd demo && php -S localhost:8000
-```
-
 ## Testing
 You can run the test suite with the following command:
 ```sh
