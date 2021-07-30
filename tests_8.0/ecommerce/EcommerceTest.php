@@ -9,7 +9,7 @@ class EcommerceTest extends TestCase
     private $bayonet_client_invalid;
     private $fixtures;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->fixtures = $this->getFixures();
         $this->bayonet_client_invalid = $this->initializeClient($this->fixtures['invalid_api_key']);

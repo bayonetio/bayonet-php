@@ -1,90 +1,97 @@
 {
-    "invalid_api_key": "xxx",
-    "consult": {
-      "email": "test_php@bayonet.io",
-      "consumer_name": "test php consumer name",
-      "consumer_internal_id": "test_php_1",
-      "cardholder_name": "test php cardholder name",
-      "telephone": "9999999999",
-      "card_number": "4111111111111111",
-      "transaction_amount": 500.00,
-      "currency_code": "MXN",
-      "shipping_address": {
-        "line_1": "test_php_line_1",
-        "line_2": "test_php_line_2",
-        "city": "Mexico DF",
-        "state": "Mexico DF",
-        "country": "MEX",
-        "zip_code": "111111"
-      },
-      "billing_address": {
-        "line_1": "test_php_line_1",
-        "line_2": "test_php_line_2",
-        "city": "Mexico DF",
-        "state": "Mexico DF",
-        "country": "MEX",
-        "zip_code": "111111"
-      },
-      "payment_method": "card",
-      "transaction_time": 1476813671,
-      "order_id": "test_php_123",
-      "payment_gateway": "stripe",
-      "channel": "ecommerce",
-      "coupon": "test_php_coupon",
-      "expedited_shipping": false,
-      "products": [
-        {
-          "product_id": "1",
-          "product_name": "product_1",
-          "product_price": 500.00,
-          "product_category": "test"
-        }
-      ]
+  "invalid_api_key": "xxx",
+  "consult": {
+    "email": "test_php@bayonet.io",
+    "consumer_name": "test php consumer name",
+    "consumer_internal_id": "test_php_1",
+    "cardholder_name": "test php cardholder name",
+    "telephone": "9999999999",
+    "card_number": "4111111111111111",
+    "transaction_amount": 500.00,
+    "currency_code": "MXN",
+    "shipping_address": {
+      "line_1": "test_php_line_1",
+      "line_2": "test_php_line_2",
+      "city": "Mexico DF",
+      "state": "Mexico DF",
+      "country": "MEX",
+      "zip_code": "111111"
     },
-    "update_transaction": {
-        "transaction_status":"success",
-        "order_id":"test_php_123"
+    "billing_address": {
+      "line_1": "test_php_line_1",
+      "line_2": "test_php_line_2",
+      "city": "Mexico DF",
+      "state": "Mexico DF",
+      "country": "MEX",
+      "zip_code": "111111"
     },
-    "feedback_historical": {
-      "email": "test_php@bayonet.io",
-      "consumer_name": "test php consumer name",
-      "consumer_internal_id": "test_php_1",
-      "cardholder_name": "test php cardholder name",
-      "telephone": "9999999999",
-      "card_number": "4111111111111111",
-      "transaction_amount": 500.00,
-      "currency_code": "MXN",
-      "shipping_address": {
-        "line_1": "test_php_line_1",
-        "line_2": "test_php_line_2",
-        "city": "Mexico DF",
-        "state": "Mexico DF",
-        "country": "MEX",
-        "zip_code": "111111"
-      },
-      "billing_address": {
-        "line_1": "test_php_line_1",
-        "line_2": "test_php_line_2",
-        "city": "Mexico DF",
-        "state": "Mexico DF",
-        "country": "MEX",
-        "zip_code": "111111"
-      },
-      "payment_method": "card",
-      "transaction_time": 1476813671,
-      "transaction_id": "test_php_123",
-      "payment_gateway": "stripe",
-      "channel": "ecommerce",
-      "coupon": "test_php_coupon",
-      "expedited_shipping": false,
-      "products": [
-        {
-          "product_id": "1",
-          "product_name": "product_1",
-          "product_price": 500.00,
-          "product_category": "test"
-        }
-      ],
-      "transaction_status":"success"
-    }
+    "payment_method": "card",
+    "transaction_time": 1476813671,
+    "order_id": "test_php_123",
+    "payment_gateway": "stripe",
+    "channel": "ecommerce",
+    "coupon": "test_php_coupon",
+    "expedited_shipping": false,
+    "products": [
+      {
+        "product_id": "1",
+        "product_name": "product_1",
+        "product_price": 500.00,
+        "product_category": "test"
+      }
+    ]
+  },
+  "update_transaction": {
+      "transaction_status":"success",
+      "order_id":"test_php_123"
+  },
+  "feedback_historical": {
+    "email": "test_php@bayonet.io",
+    "consumer_name": "test php consumer name",
+    "consumer_internal_id": "test_php_1",
+    "cardholder_name": "test php cardholder name",
+    "telephone": "9999999999",
+    "card_number": "4111111111111111",
+    "transaction_amount": 500.00,
+    "currency_code": "MXN",
+    "shipping_address": {
+      "line_1": "test_php_line_1",
+      "line_2": "test_php_line_2",
+      "city": "Mexico DF",
+      "state": "Mexico DF",
+      "country": "MEX",
+      "zip_code": "111111"
+    },
+    "billing_address": {
+      "line_1": "test_php_line_1",
+      "line_2": "test_php_line_2",
+      "city": "Mexico DF",
+      "state": "Mexico DF",
+      "country": "MEX",
+      "zip_code": "111111"
+    },
+    "payment_method": "card",
+    "transaction_time": 1476813671,
+    "order_id": "test_php_123",
+    "transaction_id": "test_php_123",
+    "payment_gateway": "stripe",
+    "channel": "ecommerce",
+    "coupon": "test_php_coupon",
+    "expedited_shipping": false,
+    "products": [
+      {
+        "product_id": "1",
+        "product_name": "product_1",
+        "product_price": 500.00,
+        "product_category": "test"
+      }
+    ],
+    "transaction_status":"success"
+  },
+  "blocklist_invalid": {
+    "email": "arandommailtotestxxx@xxx.com"
+  },
+  "blocklist_valid": {
+    "email": "test_php@bayonet.io"
+  }
 }
